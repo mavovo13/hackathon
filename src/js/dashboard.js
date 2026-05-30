@@ -175,7 +175,9 @@
 
       var consumptionTd = document.createElement("td");
       consumptionTd.className = "consumption-cell";
-      consumptionTd.textContent = incident.consumption.toLocaleString() + " Kuso";
+      consumptionTd.textContent = typeof incident.consumption === 'number'
+        ? incident.consumption.toLocaleString() + " Kuso"
+        : incident.consumption;
 
       var rateTd = document.createElement("td");
       rateTd.textContent = incident.consumptionRate;

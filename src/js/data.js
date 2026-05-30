@@ -94,11 +94,11 @@ const LIE_RESERVE_HISTORY = [
 const LIE_INCIDENTS_TOP5 = [
   {
     rank: 1,
-    name: "第二次世界大戦期 枢軸国統合プロパガンダ作戦",
-    year: "1939〜1945年",
+    name: "米大統領選関連虚偽情報拡散",
+    year: "2016年",
     consumption: 18420,
     consumptionRate: "全体の18.7%",
-    note: "複数国家による組織的嘘の同時大量放出。現在も影響が続く。"
+    note: "SNSを介した伝搬速度が過去最速を記録。複数国家による組織的嘘の同時大量放出。現在も影響が続く。"
   },
   {
     rank: 2,
@@ -110,11 +110,11 @@ const LIE_INCIDENTS_TOP5 = [
   },
   {
     rank: 3,
-    name: "米大統領選関連虚偽情報拡散",
-    year: "2016年",
-    consumption: 3840,
-    consumptionRate: "全体の3.9%",
-    note: "SNSを介した伝搬速度が過去最速を記録。"
+    name: "STAP細胞「あります」単独宣言事案",
+    year: "2014年1月28日",
+    consumption: 3120,
+    consumptionRate: "全体の3.2%",
+    note: "存在しないものへの「あります」宣言は、嘘資源の消費量を測定できないという新課題を突きつけた。哲学的観点から現在も研究が続いている。"
   },
   {
     rank: 4,
@@ -126,11 +126,11 @@ const LIE_INCIDENTS_TOP5 = [
   },
   {
     rank: 5,
-    name: "エイプリルフール複合消費（年間定例）",
-    year: "毎年4月1日",
-    consumption: 312,
-    consumptionRate: "全体の0.32%（年間）",
-    note: "嘘が文化的に許容される唯一の日。節約の観点から見直しが求められる。"
+    name: "「記憶にございません」国会答弁累計消費事案（通年）",
+    year: "通年（計測継続中）",
+    consumption: "― (測定不能)",
+    consumptionRate: "測定不能",
+    note: "調査委員会が計測を試みたが疲弊により断念。「覚えていない」という嘘は証明が最も困難な類型として学術的に注目されている。"
   }
 ];
 
