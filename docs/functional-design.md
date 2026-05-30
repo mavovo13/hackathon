@@ -21,9 +21,9 @@ graph TB
     end
 
     subgraph Modules["JSモジュール"]
-        Chart[chart.js - 嘘残量グラフ]
+        Dashboard[dashboard.js - 嘘残量グラフ・統計]
         Detection_Logic[detection.js - 嘘判定演出]
-        Layout[layout.js - 共通レイアウト]
+        Data[data.js - 共通データ定数]
     end
 
     User --> Browser
@@ -61,7 +61,7 @@ interface LieReserveData {
 
 interface LieEvent {
   label: string;         // イベント名（グラフ上に表示）
-  date: string;          // 日付文字列（例: "2016年11月"）
+  xValue: number;        // X軸の年値（例: 2016）
   drop: number;          // 消費量（キロウソ）
   color: string;         // マーカー色（CSS color）
 }
@@ -73,18 +73,18 @@ const LIE_RESERVE_HISTORY = [
   { year: 1990, amount: 98400 },
   { year: 1995, amount: 96200 },
   { year: 2000, amount: 93800 },
-  { year: 2003, amount: 92100, events: [
-    { label: "2003.8.14 14:22 急落（原因不明）", date: "2003年8月14日", drop: 847, color: "#cc0000" }
+  { year: 2003, amount: 91853, events: [
+    { label: "2003.8.14 14:22\n急落（原因不明）", xValue: 2003, drop: 847, color: "#cc0000" }
   ]},
   { year: 2008, amount: 87300, events: [
-    { label: "リーマンショック関連説明", date: "2008年", drop: 1200, color: "#996600" }
+    { label: "リーマンショック\n関連説明", xValue: 2008, drop: 1200, color: "#996600" }
   ]},
   { year: 2016, amount: 79800, events: [
-    { label: "米大統領選", date: "2016年11月", drop: 3800, color: "#cc0000" }
+    { label: "米大統領選", xValue: 2016, drop: 3800, color: "#cc0000" }
   ]},
   { year: 2020, amount: 71200 },
   { year: 2022, amount: 58900, events: [
-    { label: "AI（LLM）大量稼働開始", date: "2022年", drop: 7400, color: "#990000" }
+    { label: "AI（LLM）\n大量稼働開始", xValue: 2022, drop: 7400, color: "#990000" }
   ]},
   { year: 2024, amount: 41200 },
   { year: 2026, amount: 18700 },  // 現在（予測含む）
@@ -226,6 +226,27 @@ const LIE_JUDGMENT_PATTERNS = [
     riskLevel: "中",
     riskLabel: "中（警戒レベル2）",
     advice: "社交辞令との境界が曖昧なグレーゾーン類型。資源の観点からは消費に分類されます。"
+  },
+  {
+    lieType: "「読んでません」系（既読）",
+    percentage: 76.5,
+    riskLevel: "高",
+    riskLabel: "高（警戒レベル3）",
+    advice: "SNS・メッセージアプリの普及により急増中。既読通知機能が発症率を押し上げています。"
+  },
+  {
+    lieType: "「今日は早く帰ります」系（残業確定）",
+    percentage: 84.2,
+    riskLevel: "極めて高",
+    riskLabel: "極めて高（警戒レベル4）",
+    advice: "金曜日の発症率が平日平均の2.3倍。上司の視線との相関が統計的に有意です。"
+  },
+  {
+    lieType: "「運動してます」系（階段昇降のみ）",
+    percentage: 39.8,
+    riskLevel: "低",
+    riskLabel: "低（警戒レベル1）",
+    advice: "健康関連嘘の中では比較的消費量が少ない類型。ただし累積効果には注意が必要です。"
   }
 ];
 ```
@@ -234,7 +255,7 @@ const LIE_JUDGMENT_PATTERNS = [
 
 ## コンポーネント設計
 
-### 1. 共通レイアウト (layout.js / layout.css)
+### 1. 共通レイアウト (style.css)
 
 **責務**: 全ページ共通の政府系ポータルUIを提供する
 
