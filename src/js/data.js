@@ -14,10 +14,12 @@ const LIE_RESERVE_HISTORY = [
     amount: 91853,
     events: [
       {
-        label: "2003.8.14 14:22\n急落（原因不明）",
+        label: "【4位】2003.8.14 14:22\n急落事案（847 Kuso）",
         xValue: 2003,
         drop: 847,
-        color: "#cc0000"
+        color: "#666699",
+        labelPosition: 0.05,
+        xAdjust: 0
       }
     ]
   },
@@ -25,18 +27,7 @@ const LIE_RESERVE_HISTORY = [
   { year: 2005, amount: 90600 },
   { year: 2006, amount: 89800 },
   { year: 2007, amount: 89100 },
-  {
-    year: 2008,
-    amount: 87300,
-    events: [
-      {
-        label: "リーマンショック\n関連説明",
-        xValue: 2008,
-        drop: 1200,
-        color: "#996600"
-      }
-    ]
-  },
+  { year: 2008, amount: 87300 },
   { year: 2009, amount: 86400 },
   { year: 2010, amount: 85700 },
   { year: 2011, amount: 84900 },
@@ -49,41 +40,21 @@ const LIE_RESERVE_HISTORY = [
     amount: 79800,
     events: [
       {
-        label: "米大統領選",
+        label: "【1位】米大統領選\n虚偽情報拡散（18,420 Kuso）",
         xValue: 2016,
-        drop: 3800,
-        color: "#cc0000"
+        drop: 18420,
+        color: "#cc0000",
+        labelPosition: 0.05,
+        xAdjust: 0
       }
     ]
   },
-  {
-    year: 2017,
-    amount: 78200,
-    events: [
-      {
-        label: "エイプリルフール\n複合消費",
-        xValue: 2017,
-        drop: 312,
-        color: "#666600"
-      }
-    ]
-  },
+  { year: 2017, amount: 78200 },
   { year: 2018, amount: 76100 },
   { year: 2019, amount: 74500 },
   { year: 2020, amount: 71200 },
   { year: 2021, amount: 65800 },
-  {
-    year: 2022,
-    amount: 58900,
-    events: [
-      {
-        label: "AI（LLM）\n大量稼働開始",
-        xValue: 2022,
-        drop: 7400,
-        color: "#990000"
-      }
-    ]
-  },
+  { year: 2022, amount: 58900 },
   { year: 2023, amount: 46300 },
   { year: 2024, amount: 41200 },
   { year: 2025, amount: 29400 },
