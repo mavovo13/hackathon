@@ -1,0 +1,12 @@
+{
+  "name": "ministry-of-lie-resources",
+  "private": true,
+  "description": "嘘資源管理庁 — 静的Webアプリ（Vanilla HTML/CSS/JS）",
+  "scripts": {
+    "test": "node scripts/verify-static.js",
+    "lint": "node scripts/verify-static.js",
+    "typecheck": "node scripts/verify-static.js",
+    "serve": "python3 -m http.server 8000 --directory src",
+    "server": "npm run serve"
+  }
+}

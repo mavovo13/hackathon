@@ -490,3 +490,174 @@ noscript {
   color: #cc0000;
   font-weight: bold;
 }
+/* === 嘘判定ページ === */
+
+.detection-intro {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+#camera-wrapper {
+  width: 320px;
+  height: 240px;
+  border: 2px solid #003399;
+  background-color: #000000;
+  margin: 0 auto 12px auto;
+  position: relative;
+}
+
+#camera-view {
+  width: 320px;
+  height: 240px;
+  display: block;
+  object-fit: cover;
+}
+
+.camera-placeholder-active #camera-view {
+  visibility: hidden;
+}
+
+.camera-placeholder-active::after {
+  content: "【遠隔解析モード】";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  margin-left: -140px;
+  margin-top: -20px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  background-color: #336699;
+  padding: 8px;
+  border: 1px solid #ccddee;
+}
+
+#status-message {
+  color: #cc0000;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.detection-controls {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.detection-btn {
+  background-color: #003399;
+  color: #ffffff;
+  border: 2px outset #336699;
+  padding: 6px 20px;
+  font-family: "MS PGothic", "MS Pゴシック", "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.detection-btn:hover {
+  background-color: #336699;
+}
+
+.detection-btn:disabled {
+  background-color: #999999;
+  border-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.detection-btn-secondary {
+  background-color: #336699;
+  margin-left: 8px;
+}
+
+#analyzing-panel {
+  text-align: center;
+  padding: 16px;
+  background-color: #f0f5fa;
+  border: 1px solid #ccddee;
+  margin-bottom: 12px;
+}
+
+.analyzing-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #003399;
+  margin-bottom: 10px;
+}
+
+.analyzing-subtitle {
+  font-size: 12px;
+  color: #336699;
+  margin-bottom: 12px;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 18px;
+  background-color: #ffffff;
+  border: 1px solid #003399;
+  margin-bottom: 8px;
+}
+
+#progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #003399;
+}
+
+.detection-result-box {
+  background-color: #f0f5fa;
+  border: 2px solid #003399;
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.detection-result-row {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.detection-result-label {
+  font-weight: bold;
+  color: #336699;
+}
+
+.detection-result-value {
+  color: #333333;
+}
+
+.detection-result-highlight {
+  font-size: 15px;
+  font-weight: bold;
+  color: #003399;
+}
+
+.detection-result-risk {
+  font-weight: bold;
+}
+
+.risk-level-low {
+  color: #336699;
+}
+
+.risk-level-medium {
+  color: #996600;
+}
+
+.risk-level-high {
+  color: #cc6600;
+}
+
+.risk-level-critical {
+  color: #cc0000;
+}
+
+.detection-disclaimer {
+  font-size: 11px;
+  color: #666666;
+  margin-top: 12px;
+  line-height: 1.5;
+  border-top: 1px dashed #ccddee;
+  padding-top: 8px;
+}
