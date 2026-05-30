@@ -661,3 +661,81 @@ noscript {
   border-top: 1px dashed #ccddee;
   padding-top: 8px;
 }
+
+/* ===== 節約のすすめページ ===== */
+
+.savings-action {
+  border: 1px solid #99aabb;
+  margin-bottom: 12px;
+  background-color: #fafcff;
+}
+
+.savings-action-header {
+  background-color: #eef3fa;
+  border-bottom: 1px solid #ccddee;
+  padding: 6px 10px;
+  overflow: hidden;
+}
+
+.savings-action-number {
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  color: #003399;
+  line-height: 1.2;
+  margin-right: 8px;
+}
+
+.savings-action-title {
+  float: left;
+  font-size: 13px;
+  font-weight: bold;
+  color: #003399;
+  line-height: 1.6;
+}
+
+.savings-effect {
+  float: right;
+  font-size: 11px;
+  color: #ffffff;
+  background-color: #336699;
+  padding: 2px 8px;
+  border: 1px solid #003399;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.savings-action-body {
+  padding: 8px 10px 6px 10px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #333333;
+}
+
+.savings-action-body p {
+  margin-bottom: 6px;
+}
+
+.savings-action-body p:last-child {
+  margin-bottom: 0;
+}
+
+.savings-action-note {
+  font-size: 11px;
+  color: #666666;
+  padding: 4px 10px;
+  border-top: 1px dashed #ccddee;
+  background-color: #f5f8fc;
+}
+
+.savings-note-text {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.gov-table .col-month { text-align: center; font-weight: bold; }
+.gov-table .col-kuso  { text-align: right; font-family: monospace; }
+.gov-table .col-kuso-alert { text-align: right; font-family: monospace; color: #cc0000; font-weight: bold; }
+.gov-table .col-kuso-warn  { text-align: right; font-family: monospace; color: #cc6600; }
+.gov-table .col-text-alert { color: #cc0000; }
+.gov-table .col-text-warn  { color: #cc6600; }
