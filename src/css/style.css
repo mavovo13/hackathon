@@ -275,22 +275,22 @@ a:hover {
 }
 
 .stats-grid {
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   padding: 8px;
   background-color: #f0f5fa;
 }
 
 .stat-item {
-  float: left;
-  width: 48%;
-  margin-bottom: 6px;
+  flex: 1 1 45%;
   padding: 4px 6px;
   background-color: #ffffff;
   border: 1px solid #ccddee;
 }
 
-.stat-item:nth-child(odd) {
-  margin-right: 2%;
+.stat-item--full {
+  flex: 0 0 100%;
 }
 
 .stat-label {

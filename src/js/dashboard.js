@@ -60,7 +60,7 @@
         labels: chartData.labels,
         datasets: [
           {
-            label: "世界嘘残量（キロウソ）",
+            label: "世界嘘残量（キロウソ / Kuso）",
             data: chartData.values,
             borderColor: "#003399",
             backgroundColor: "rgba(0,51,153,0.08)",
@@ -175,7 +175,9 @@
 
       var consumptionTd = document.createElement("td");
       consumptionTd.className = "consumption-cell";
-      consumptionTd.textContent = incident.consumption.toLocaleString() + " Kuso";
+      consumptionTd.textContent = typeof incident.consumption === 'number'
+        ? incident.consumption.toLocaleString() + " Kuso"
+        : incident.consumption;
 
       var rateTd = document.createElement("td");
       rateTd.textContent = incident.consumptionRate;
