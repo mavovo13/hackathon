@@ -82,7 +82,8 @@
       </div>
 
       <div id="camera-wrapper">
-        <video id="camera-view" autoplay playsinline muted aria-label="Webカメラ映像"></video>
+        <video id="camera-view" width="320" height="240" autoplay playsinline muted aria-label="Webカメラ映像"></video>
+        <canvas id="face-overlay" width="320" height="240" aria-hidden="true"></canvas>
       </div>
 
       <p id="status-message" hidden></p>
@@ -129,8 +130,8 @@
           <button type="button" id="reanalyze-btn" class="detection-btn detection-btn-secondary">再解析</button>
         </div>
         <p class="detection-disclaimer">
-          ※ 本診断結果は演出用の参考値です。実際のカメラ映像は解析に使用されておらず、
-          外部への送信・保存も行っておりません。
+          ※ 顔検出は可視化演出のみです。診断結果は参考値（ランダム）であり、
+          映像の外部送信・保存は行っておりません。
         </p>
       </div>
 
@@ -146,6 +147,7 @@
 
 </div>
 
+<script src="js/vendor/face-api.min.js"></script>
 <script src="js/data.js"></script>
 <script src="js/detection.js"></script>
 

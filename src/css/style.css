@@ -510,7 +510,17 @@ noscript {
   width: 320px;
   height: 240px;
   display: block;
-  object-fit: cover;
+  object-fit: fill;
+}
+
+#face-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 240px;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .camera-placeholder-active #camera-view {
