@@ -53,7 +53,7 @@
 | `src/savings.html` | 嘘節約のすすめページ |
 | `src/css/style.css` | 全ページ共通スタイル |
 | `src/js/data.js` | 嘘残量・事件・判定パターンのデータ定数 |
-| `src/js/chart.js` | 嘘残量グラフ描画ロジック |
+| `src/js/dashboard.js` | 嘘残量グラフ描画ロジック |
 | `src/js/detection.js` | Webカメラ・嘘判定演出ロジック |
 
 ---

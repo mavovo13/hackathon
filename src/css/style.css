@@ -1,14 +1,4 @@
-/*
-  メインカラー:    #003399 (紺)
-  セカンダリ:     #336699 (くすんだ青)
-  本文テキスト:   #333333
-  サイド背景:     #e8eef5
-  本文背景:       #ffffff
-  警告/マーカー:   #cc0000
-  テーブルヘッダ: #ccddee
-  テーブル偶数行: #f0f5fa
-*/
-
+/* 嘘資源管理庁 共通スタイル — 2003年政府サイト再現 */
 * {
   margin: 0;
   padding: 0;
@@ -18,159 +8,488 @@ body {
   font-family: "MS PGothic", "MS Pゴシック", "ＭＳ Ｐゴシック", sans-serif;
   font-size: 13px;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #c8d4e0;
 }
 
 a {
   color: #003399;
+  text-decoration: underline;
 }
 
-a:visited {
-  color: #336699;
+a:hover {
+  color: #cc0000;
 }
 
-.clear {
-  clear: both;
-}
-
+/* ===== WRAPPER ===== */
 #wrapper {
   width: 800px;
   margin: 0 auto;
-  border: 1px solid #003399;
+  background-color: #ffffff;
+  border-left: 1px solid #336699;
+  border-right: 1px solid #336699;
 }
 
+/* ===== HEADER ===== */
 #header {
   background-color: #003399;
   color: #ffffff;
-  padding: 10px 12px;
-  border-bottom: 3px solid #002266;
+  padding: 8px 10px;
+  border-bottom: 3px solid #336699;
 }
 
-#header-inner {
-  float: left;
-}
-
-#agency-logo {
-  float: left;
-  width: 48px;
-  height: 48px;
-  margin-right: 10px;
-  background-color: #ffffff;
-  border: 2px solid #ccddee;
-  text-align: center;
-  line-height: 48px;
-  font-weight: bold;
-  color: #003399;
-  font-size: 11px;
-}
-
-#header-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 2px;
-}
-
-#header-subtitle {
-  font-size: 11px;
-}
-
-#content-area {
-  background-color: #ffffff;
-}
-
-#sidebar {
-  width: 160px;
-  float: left;
-  background-color: #e8eef5;
-  min-height: 420px;
-  border-right: 1px solid #ccddee;
-}
-
-#sidebar-nav {
-  list-style: none;
-  padding: 8px 0;
-}
-
-.sidebar-nav-item {
-  border-bottom: 1px solid #ccddee;
-}
-
-.sidebar-nav-item a {
+#header .header-top {
   display: block;
-  padding: 6px 10px;
+  overflow: hidden;
+}
+
+#header .site-crest {
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-right: 10px;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+#header .site-title {
+  float: left;
+}
+
+#header .site-title h1 {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.3;
+}
+
+#header .site-title .subtitle {
+  font-size: 11px;
+  color: #aabbdd;
+  letter-spacing: 1px;
+}
+
+#header .header-nav {
+  float: right;
+  font-size: 11px;
+  color: #aabbdd;
+  padding-top: 16px;
+}
+
+#header .header-nav a {
+  color: #ccddff;
+  margin-left: 8px;
+}
+
+/* clearfix */
+#header:after,
+#content:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ===== GLOBAL NAV ===== */
+#global-nav {
+  background-color: #336699;
+  padding: 4px 10px;
+  overflow: hidden;
+}
+
+#global-nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+#global-nav ul li {
+  float: left;
+  margin-right: 2px;
+}
+
+#global-nav ul li a {
+  display: block;
+  padding: 3px 10px;
+  background-color: #336699;
+  color: #ffffff;
   text-decoration: none;
   font-size: 12px;
+  border: 1px solid #4477aa;
 }
 
-.sidebar-nav-item a:hover {
-  background-color: #ccddee;
+#global-nav ul li a:hover,
+#global-nav ul li a.active {
+  background-color: #003399;
+  color: #ffff99;
 }
 
-.sidebar-nav-item.active a {
+/* ===== CONTENT AREA ===== */
+#content {
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+/* ===== SIDEBAR ===== */
+#sidebar {
+  width: 155px;
+  float: left;
+  background-color: #e8eef5;
+  border-right: 1px solid #99aabb;
+  min-height: 500px;
+  padding-top: 10px;
+}
+
+#sidebar .menu-box {
+  margin-bottom: 10px;
+}
+
+#sidebar .menu-title {
+  background-color: #336699;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-bottom: 1px solid #003399;
+}
+
+#sidebar .menu-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar .menu-box ul li {
+  border-bottom: 1px dotted #99aabb;
+}
+
+#sidebar .menu-box ul li a {
+  display: block;
+  padding: 5px 8px 5px 14px;
+  color: #003399;
+  text-decoration: none;
+  font-size: 12px;
+  background-image: url("data:image/gif;base64,R0lGODlhBAAEAIABAAAA//8A/yH5BAEAAAEALAAAAAAEAAQAAAIFhI+hWAAAOw==");
+  background-repeat: no-repeat;
+  background-position: 4px center;
+}
+
+#sidebar .menu-box ul li a:hover {
+  background-color: #ccddef;
+  color: #cc0000;
+}
+
+#sidebar .menu-box ul li a.active {
   background-color: #003399;
   color: #ffffff;
   font-weight: bold;
 }
 
-.sidebar-nav-item.disabled a {
-  color: #999999;
+#sidebar .menu-box ul li a.dummy-link {
   cursor: not-allowed;
+  color: #666666;
 }
 
-.sidebar-nav-item.disabled a:hover {
-  background-color: transparent;
+#sidebar .menu-box ul li a.dummy-link:hover {
+  background-color: #e8eef5;
+  color: #666666;
 }
 
+/* ===== MAIN CONTENT ===== */
 #main {
-  width: 620px;
+  width: 630px;
   float: right;
-  padding: 12px 14px 20px 14px;
-  min-height: 400px;
-}
-
-#main h1 {
-  font-size: 16px;
-  color: #003399;
-  border-left: 4px solid #003399;
-  padding-left: 8px;
-  margin-bottom: 10px;
+  padding: 10px 12px;
+  background-color: #ffffff;
 }
 
 #main h2 {
   font-size: 14px;
+  color: #003399;
+  border-left: 4px solid #003399;
+  padding: 3px 0 3px 8px;
+  margin-bottom: 8px;
+  margin-top: 14px;
+  background-color: #eef3fa;
+}
+
+#main h2:first-child {
+  margin-top: 0;
+}
+
+#main h3 {
+  font-size: 13px;
   color: #336699;
-  margin: 14px 0 8px 0;
-  border-bottom: 1px solid #ccddee;
+  border-bottom: 1px solid #99aabb;
   padding-bottom: 3px;
+  margin-bottom: 6px;
+  margin-top: 10px;
 }
 
-.page-notice {
-  background-color: #f0f5fa;
-  border: 1px solid #ccddee;
-  padding: 8px 10px;
-  margin-bottom: 12px;
-  font-size: 12px;
-  line-height: 1.6;
+/* ===== PAGE HEADER ===== */
+.page-header {
+  border-bottom: 2px solid #003399;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  overflow: hidden;
 }
 
-#footer {
-  clear: both;
-  background-color: #e8eef5;
-  border-top: 1px solid #ccddee;
-  padding: 8px 12px;
+.page-header h2 {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: #003399;
+  font-weight: bold;
+}
+
+.page-header .update-info {
+  float: right;
   font-size: 11px;
-  color: #336699;
-  line-height: 1.6;
+  color: #666666;
+  text-align: right;
+  line-height: 1.5;
 }
 
-.stub-message {
-  padding: 20px;
+.data-source {
+  font-size: 11px;
+  color: #666666;
+  margin-bottom: 10px;
+  border: 1px solid #ccddee;
+  padding: 4px 8px;
+  background-color: #f5f8fc;
+}
+
+/* ===== STATS PANEL ===== */
+.stats-panel {
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid #99aabb;
+}
+
+.stats-panel .stats-title {
+  background-color: #336699;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+}
+
+.stats-grid {
+  overflow: hidden;
+  padding: 8px;
   background-color: #f0f5fa;
-  border: 1px dashed #ccddee;
+}
+
+.stat-item {
+  float: left;
+  width: 48%;
+  margin-bottom: 6px;
+  padding: 4px 6px;
+  background-color: #ffffff;
+  border: 1px solid #ccddee;
+}
+
+.stat-item:nth-child(odd) {
+  margin-right: 2%;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #666666;
+  display: block;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #cc0000;
+  display: block;
+  margin-top: 2px;
+}
+
+.stat-value.normal {
+  color: #003399;
+}
+
+.stat-value.warning {
+  color: #cc6600;
+}
+
+/* ===== CHART AREA ===== */
+.chart-container {
+  border: 1px solid #99aabb;
+  padding: 8px;
+  background-color: #fafcff;
+  margin-bottom: 12px;
+}
+
+.chart-container canvas {
+  display: block;
+}
+
+/* ===== TABLE ===== */
+.gov-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #99aabb;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.gov-table th {
+  background-color: #ccddee;
+  color: #003399;
+  border: 1px solid #99aabb;
+  padding: 5px 6px;
   text-align: center;
+  font-weight: bold;
+}
+
+.gov-table td {
+  border: 1px solid #99aabb;
+  padding: 4px 6px;
+  vertical-align: top;
+}
+
+.gov-table tr:nth-child(even) td {
+  background-color: #f0f5fa;
+}
+
+.gov-table tr:hover td {
+  background-color: #ddeeff;
+}
+
+.gov-table .rank-cell {
+  text-align: center;
+  font-weight: bold;
+  color: #336699;
+  width: 30px;
+}
+
+.gov-table .consumption-cell {
+  text-align: right;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.gov-table .rank-1 td {
+  background-color: #fff0f0;
+}
+
+/* ===== CHART MAIN CONTAINER ===== */
+.chart-container-main {
+  height: 300px;
+  position: relative;
+}
+
+.chart-container-main canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== STAT VALUE SMALL ===== */
+.stat-value.small {
+  font-size: 12px;
+}
+
+/* ===== GLOBAL NAV DISABLED ===== */
+#global-nav ul li a.disabled {
+  cursor: not-allowed;
+  color: #aabbdd;
+}
+
+#global-nav ul li a.disabled:hover {
+  background-color: #336699;
+  color: #aabbdd;
+}
+
+/* ===== DUMMY LINK ALERT ===== */
+.dummy-link.dummy-link-alert {
+  color: #cc0000;
+}
+
+/* ===== FOOTNOTE ===== */
+.footnote {
+  font-size: 11px;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+/* ===== RELATED LIST ===== */
+.related-list {
+  margin-left: 20px;
+  line-height: 2;
+}
+
+/* ===== TABLE COLUMN WIDTHS ===== */
+.gov-table .col-rank   { width: 36px; }
+.gov-table .col-year   { width: 80px; }
+.gov-table .col-amount { width: 90px; }
+.gov-table .col-rate   { width: 100px; }
+
+/* ===== RELATED LIST DISABLED LINK ===== */
+.related-list .link-disabled {
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.related-list .link-disabled:hover {
+  color: #666666;
+}
+
+/* ===== NOTICE BOX ===== */
+.notice-box {
+  border: 1px solid #cc6600;
+  background-color: #fffbe0;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.notice-box .notice-title {
+  font-weight: bold;
+  color: #cc6600;
+}
+
+/* ===== FOOTER ===== */
+#footer {
+  background-color: #003399;
+  color: #aabbdd;
+  font-size: 11px;
+  padding: 8px 10px;
+  border-top: 2px solid #336699;
+  text-align: center;
+  line-height: 1.8;
+  clear: both;
+}
+
+#footer a {
+  color: #ccddff;
+}
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb {
+  font-size: 11px;
+  color: #666666;
+  padding: 4px 0;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ccddee;
+}
+
+.breadcrumb a {
   color: #336699;
 }
 
+/* ===== NOSCRIPT ===== */
+noscript {
+  display: block;
+  background-color: #ffeeee;
+  border: 1px solid #cc0000;
+  padding: 10px;
+  margin: 10px;
+  color: #cc0000;
+  font-weight: bold;
+}
 /* === 嘘判定ページ === */
 
 .detection-intro {
