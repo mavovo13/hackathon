@@ -1,0 +1,344 @@
+/*
+  メインカラー:    #003399 (紺)
+  セカンダリ:     #336699 (くすんだ青)
+  本文テキスト:   #333333
+  サイド背景:     #e8eef5
+  本文背景:       #ffffff
+  警告/マーカー:   #cc0000
+  テーブルヘッダ: #ccddee
+  テーブル偶数行: #f0f5fa
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "MS PGothic", "MS Pゴシック", "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 13px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+a {
+  color: #003399;
+}
+
+a:visited {
+  color: #336699;
+}
+
+.clear {
+  clear: both;
+}
+
+#wrapper {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #003399;
+}
+
+#header {
+  background-color: #003399;
+  color: #ffffff;
+  padding: 10px 12px;
+  border-bottom: 3px solid #002266;
+}
+
+#header-inner {
+  float: left;
+}
+
+#agency-logo {
+  float: left;
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  background-color: #ffffff;
+  border: 2px solid #ccddee;
+  text-align: center;
+  line-height: 48px;
+  font-weight: bold;
+  color: #003399;
+  font-size: 11px;
+}
+
+#header-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+#header-subtitle {
+  font-size: 11px;
+}
+
+#content-area {
+  background-color: #ffffff;
+}
+
+#sidebar {
+  width: 160px;
+  float: left;
+  background-color: #e8eef5;
+  min-height: 420px;
+  border-right: 1px solid #ccddee;
+}
+
+#sidebar-nav {
+  list-style: none;
+  padding: 8px 0;
+}
+
+.sidebar-nav-item {
+  border-bottom: 1px solid #ccddee;
+}
+
+.sidebar-nav-item a {
+  display: block;
+  padding: 6px 10px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.sidebar-nav-item a:hover {
+  background-color: #ccddee;
+}
+
+.sidebar-nav-item.active a {
+  background-color: #003399;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.sidebar-nav-item.disabled a {
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.sidebar-nav-item.disabled a:hover {
+  background-color: transparent;
+}
+
+#main {
+  width: 620px;
+  float: right;
+  padding: 12px 14px 20px 14px;
+  min-height: 400px;
+}
+
+#main h1 {
+  font-size: 16px;
+  color: #003399;
+  border-left: 4px solid #003399;
+  padding-left: 8px;
+  margin-bottom: 10px;
+}
+
+#main h2 {
+  font-size: 14px;
+  color: #336699;
+  margin: 14px 0 8px 0;
+  border-bottom: 1px solid #ccddee;
+  padding-bottom: 3px;
+}
+
+.page-notice {
+  background-color: #f0f5fa;
+  border: 1px solid #ccddee;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#footer {
+  clear: both;
+  background-color: #e8eef5;
+  border-top: 1px solid #ccddee;
+  padding: 8px 12px;
+  font-size: 11px;
+  color: #336699;
+  line-height: 1.6;
+}
+
+.stub-message {
+  padding: 20px;
+  background-color: #f0f5fa;
+  border: 1px dashed #ccddee;
+  text-align: center;
+  color: #336699;
+}
+
+/* === 嘘判定ページ === */
+
+.detection-intro {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+#camera-wrapper {
+  width: 320px;
+  height: 240px;
+  border: 2px solid #003399;
+  background-color: #000000;
+  margin: 0 auto 12px auto;
+  position: relative;
+}
+
+#camera-view {
+  width: 320px;
+  height: 240px;
+  display: block;
+  object-fit: cover;
+}
+
+.camera-placeholder-active #camera-view {
+  visibility: hidden;
+}
+
+.camera-placeholder-active::after {
+  content: "【遠隔解析モード】";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  margin-left: -140px;
+  margin-top: -20px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  background-color: #336699;
+  padding: 8px;
+  border: 1px solid #ccddee;
+}
+
+#status-message {
+  color: #cc0000;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.detection-controls {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.detection-btn {
+  background-color: #003399;
+  color: #ffffff;
+  border: 2px outset #336699;
+  padding: 6px 20px;
+  font-family: "MS PGothic", "MS Pゴシック", "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.detection-btn:hover {
+  background-color: #336699;
+}
+
+.detection-btn:disabled {
+  background-color: #999999;
+  border-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.detection-btn-secondary {
+  background-color: #336699;
+  margin-left: 8px;
+}
+
+#analyzing-panel {
+  text-align: center;
+  padding: 16px;
+  background-color: #f0f5fa;
+  border: 1px solid #ccddee;
+  margin-bottom: 12px;
+}
+
+.analyzing-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #003399;
+  margin-bottom: 10px;
+}
+
+.analyzing-subtitle {
+  font-size: 12px;
+  color: #336699;
+  margin-bottom: 12px;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 18px;
+  background-color: #ffffff;
+  border: 1px solid #003399;
+  margin-bottom: 8px;
+}
+
+#progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #003399;
+}
+
+.detection-result-box {
+  background-color: #f0f5fa;
+  border: 2px solid #003399;
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.detection-result-row {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.detection-result-label {
+  font-weight: bold;
+  color: #336699;
+}
+
+.detection-result-value {
+  color: #333333;
+}
+
+.detection-result-highlight {
+  font-size: 15px;
+  font-weight: bold;
+  color: #003399;
+}
+
+.detection-result-risk {
+  font-weight: bold;
+}
+
+.risk-level-low {
+  color: #336699;
+}
+
+.risk-level-medium {
+  color: #996600;
+}
+
+.risk-level-high {
+  color: #cc6600;
+}
+
+.risk-level-critical {
+  color: #cc0000;
+}
+
+.detection-disclaimer {
+  font-size: 11px;
+  color: #666666;
+  margin-top: 12px;
+  line-height: 1.5;
+  border-top: 1px dashed #ccddee;
+  padding-top: 8px;
+}
