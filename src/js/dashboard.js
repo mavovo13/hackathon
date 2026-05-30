@@ -60,7 +60,7 @@
         labels: chartData.labels,
         datasets: [
           {
-            label: "世界嘘残量（キロウソ）",
+            label: "世界嘘残量（キロウソ / Kuso）",
             data: chartData.values,
             borderColor: "#003399",
             backgroundColor: "rgba(0,51,153,0.08)",

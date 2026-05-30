@@ -135,7 +135,7 @@ const LIE_INCIDENTS_TOP5 = [
 ];
 
 /* 統計パネル定数 */
-const CURRENT_AMOUNT   = "18,742 キロウソ";
+const CURRENT_AMOUNT   = "18,742 キロウソ(Kuso)";
 const CONSUMPTION_RATE = "−31.2%（過去最速）";
 const DEPLETION_YEAR   = "西暦 2029 年（推計）";
 const MAIN_SOURCE      = "AI ハルシネーション（74.3%）";
