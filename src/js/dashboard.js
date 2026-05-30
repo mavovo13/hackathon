@@ -30,7 +30,7 @@
           label: {
             display: true,
             content: ev.label.split("\n"),
-            position: "start",
+            position: ev.labelPosition !== undefined ? ev.labelPosition : 0.05,
             backgroundColor: ev.color,
             color: "#ffffff",
             font: {
@@ -38,7 +38,7 @@
               family: '"MS PGothic","MS Pゴシック",sans-serif'
             },
             padding: { top: 3, bottom: 3, left: 4, right: 4 },
-            yAdjust: -6
+            xAdjust: ev.xAdjust || 0
           }
         };
         idx++;
@@ -63,18 +63,22 @@
             label: "世界嘘残量（キロウソ / Kuso）",
             data: chartData.values,
             borderColor: "#003399",
-            backgroundColor: "rgba(0,51,153,0.08)",
-            borderWidth: 2,
-            pointRadius: 3,
+            backgroundColor: "rgba(0,51,153,0.15)",
+            borderWidth: 2.5,
+            pointRadius: 4,
             pointBackgroundColor: "#003399",
             fill: true,
-            tension: 0.2
+            tension: 0.35
           }
         ]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        animation: {
+          duration: 1600,
+          easing: "easeInOutQuart"
+        },
         scales: {
           x: {
             title: {
@@ -97,8 +101,8 @@
               color: "#336699",
               font: { size: 11 }
             },
-            min: 0,
-            max: 110000,
+            min: 15000,
+            max: 102000,
             ticks: {
               color: "#333333",
               callback: function (v) {
