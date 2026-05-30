@@ -15,6 +15,7 @@
 | 技術 | バージョン | 用途 | 選定理由 |
 |------|-----------|------|----------|
 | Chart.js | 4.x (CDN) | 嘘残量折れ線グラフ | 軽量・設定容易・外部依存1本のみ |
+| @vladmandic/face-api | 1.7.15 (ローカル) | 嘘判定ページの顔検出 HUD | tinyFaceDetector のみ、TF.js 同梱、診断結果はランダム |
 
 ### 開発ツール
 
@@ -54,7 +55,9 @@
 | `src/css/style.css` | 全ページ共通スタイル |
 | `src/js/data.js` | 嘘残量・事件・判定パターンのデータ定数 |
 | `src/js/dashboard.js` | 嘘残量グラフ描画ロジック |
-| `src/js/detection.js` | Webカメラ・嘘判定演出ロジック |
+| `src/js/detection.js` | Webカメラ・face-api 顔検出 HUD・嘘判定演出ロジック |
+| `src/js/vendor/face-api.min.js` | face-api.js + TensorFlow.js 同梱（嘘判定ページのみ） |
+| `src/models/tiny-face-detector/` | tinyFaceDetector モデル weights |
 
 ---
 
@@ -88,7 +91,7 @@
 
 | リソース | 上限 | 理由 |
 |---------|------|------|
-| 合計ファイルサイズ | 2MB以下 | CDNのChart.js (~200KB) + 静的ファイル |
+| 合計ファイルサイズ | 5MB以下 | Chart.js CDN + TF.js/face-api ローカル vendor + モデル |
 | メモリ（ブラウザ） | 100MB以下 | Webカメラストリームを含む |
 
 ---
@@ -97,9 +100,9 @@
 
 ### データ保護
 
-- **Webカメラ映像**: `getUserMedia()` で取得したストリームはDOMの `<video>` 要素に表示するのみ。`canvas.drawImage` による静止画キャプチャも行わない
+- **Webカメラ映像**: `getUserMedia()` で取得したストリームは `<video>` 表示と face-api による顔枠検出（HUD 演出）にのみ使用。静止画キャプチャ・外部送信は行わない
 - **個人情報**: 収集・送信するデータなし
-- **外部通信**: Chart.js の CDN 読み込み1件のみ（オフライン対応が必要な場合はローカルコピー）
+- **外部通信**: ダッシュボードの Chart.js CDN 読み込み1件のみ（嘘判定ページはローカル vendor でオフライン動作可能）
 
 ### 入力検証
 
@@ -152,7 +155,7 @@
 - [ ] Chrome（最新版）でダッシュボードが表示される
 - [ ] グラフが正しく描画される（折れ線、右肩下がり、マーカー表示）
 - [ ] TOP5テーブルが表示される
-- [ ] 嘘判定ページでWebカメラが起動する
+- [ ] 解析中に顔枠 HUD が表示される（カメラ・モデルロード成功時）
 - [ ] 3〜5秒後に結果が表示される（毎回異なること）
 - [ ] 「再解析」ボタンで新しい結果が表示される
 - [ ] 節約のすすめページが表示される
@@ -167,6 +170,8 @@
 | ライブラリ | 用途 | バージョン管理方針 |
 |-----------|------|-------------------|
 | Chart.js | 嘘残量グラフ | CDNバージョン固定（`@4.4.0`相当） |
+| @vladmandic/face-api | 顔検出 HUD（TF.js 同梱） | ローカル固定（`src/js/vendor/face-api.min.js` `@1.7.15`） |
+| tinyFaceDetector | 顔検出モデル | ローカル固定（`src/models/tiny-face-detector/`） |
 
 **CDNリンク例**:
 ```html

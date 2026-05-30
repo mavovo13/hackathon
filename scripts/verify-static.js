@@ -9,7 +9,10 @@ const requiredFiles = [
   'src/index.html',
   'src/css/style.css',
   'src/js/data.js',
-  'src/js/detection.js'
+  'src/js/detection.js',
+  'src/js/vendor/face-api.min.js',
+  'src/models/tiny-face-detector/tiny_face_detector_model-weights_manifest.json',
+  'src/models/tiny-face-detector/tiny_face_detector_model.bin'
 ];
 
 const errors = [];
@@ -37,6 +40,9 @@ requiredFiles.forEach(function (filePath) {
     if (!content.includes('NotAllowedError')) {
       errors.push('detection.js must handle NotAllowedError');
     }
+    if (!content.includes('tinyFaceDetector')) {
+      errors.push('detection.js must load tinyFaceDetector model');
+    }
   }
 
   if (filePath === 'src/detection.html') {
@@ -45,6 +51,12 @@ requiredFiles.forEach(function (filePath) {
     }
     if (!content.includes('id="reanalyze-btn"')) {
       errors.push('detection.html must include reanalyze button');
+    }
+    if (!content.includes('id="face-overlay"')) {
+      errors.push('detection.html must include face-overlay canvas');
+    }
+    if (!content.includes('js/vendor/face-api.min.js')) {
+      errors.push('detection.html must include face-api vendor script');
     }
   }
 });
